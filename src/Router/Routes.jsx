@@ -3,13 +3,14 @@ import {
     RouterProvider,
   } from "react-router-dom";
 import Home from "../Pages/Home/Home";
+import Roots from "../Roots/Roots";
 
 
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <div>Hello world!</div>,
-      errorElement: <ErrorPage />,
+      element: <Roots/>,
+    //   errorElement: <ErrorPage />,
       children: [
         {
           path: "/",
