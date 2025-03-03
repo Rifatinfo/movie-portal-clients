@@ -12,6 +12,17 @@ const Register = () => {
 
         const RegisterUser = { firstName, lastName, username, email, password, confirmPassword };
         console.log(RegisterUser);
+
+        if(password.length  < 6){
+           alert('Password Should be 6 character or longer')
+           return;
+        }
+        const regularExpression = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+        if(!regularExpression.test(password)){
+           alert('At Least one uppercase, one lowercase , one number , one special character')
+           return;
+        }
+        
     };
 
     return (

@@ -12,6 +12,12 @@ const Login = () => {
         const loginUser = { email, password };
         console.log(loginUser);
 
+        const regularExpression = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+        if (!regularExpression.test(password)) {
+            alert('At Least one uppercase, one lowercase , one number , one special character')
+            return;
+        }
+
     }
     return (
         <div className="backdrop-blur-md bg-white/30 mt-10 ">
