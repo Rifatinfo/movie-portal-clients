@@ -1,86 +1,110 @@
 import { Link } from "react-router-dom";
 
 const Register = () => {
+    const handleRegister = (e) => {
+        e.preventDefault();
+        const firstName = e.target.firstName.value;
+        const lastName = e.target.lastName.value;
+        const username = e.target.username.value;
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        const confirmPassword = e.target.confirmPassword.value;
+
+        const RegisterUser = { firstName, lastName, username, email, password, confirmPassword };
+        console.log(RegisterUser);
+    };
+
     return (
-        <div className="">
-            <form>
-                <div className="bg-black text-white max-w-6xl mx-auto rounded-md">
-                    <h1 className="text-2xl font-bold text-center mt-10 py-4">Create Your Account</h1>
-                    <div className="md:flex md:items-center md:justify-center md:gap-3 grid gap-3 mt-10">
-                        <div className="space-y-1 text-sm md:w-1/3 w-full">
-                            <label htmlFor="username" className="block font-semibold">First Name</label>
-                            <input
-                                type="text"
-                                name="username"
-                                id="username"
-                                placeholder="Username"
-                                className="w-full px-4 py-3  border-2 border-gray-300 focus:border-red-600 focus:outline-none"
-                            />
-                        </div>
-                        <div className="space-y-1 text-sm md:w-1/3 w-full">
-                            <label htmlFor="username" className="block font-semibold">Last Name</label>
-                            <input
-                                type="text"
-                                name="username"
-                                id="username"
-                                placeholder="Password"
-                                className="w-full px-4 py-3  border-2 border-gray-300 focus:border-red-600 focus:outline-none"
-                            />
-                        </div>
+        <div className="flex items-center justify-center min-h-screen">
+            <form onSubmit={handleRegister} className="bg-black text-white max-w-6xl mx-auto p-8 rounded-md">
+                <h1 className="text-2xl font-bold text-center mb-6">Create Your Account</h1>
+
+                <div className="grid md:grid-cols-2 gap-4">
+                    {/* First Name */}
+                    <div className="space-y-1">
+                        <label className="block font-semibold">First Name</label>
+                        <input
+                            type="text"
+                            name="firstName"
+                            placeholder="First Name"
+                            className="w-full px-4 py-3 border-2 border-gray-300 focus:border-red-600 focus:outline-none "
+                        />
                     </div>
-                    <div className="md:flex md:items-center md:justify-center md:gap-3 grid gap-3 mt-10">
-                        <div className="space-y-1 text-sm md:w-1/3 w-full">
-                            <label htmlFor="username" className="block font-semibold">Username*</label>
-                            <input
-                                type="text"
-                                name="username"
-                                id="username"
-                                placeholder="Username"
-                                className="required w-full px-4 py-3  border-2 border-gray-300 focus:border-red-600 focus:outline-none"
-                            />
-                        </div>
-                        <div className="space-y-1 text-sm md:w-1/3 w-full">
-                            <label htmlFor="username" className="block font-semibold">Email*</label>
-                            <input
-                                type="text"
-                                name="username"
-                                id="username"
-                                placeholder="Password"
-                                className="required w-full px-4 py-3  border-2 border-gray-300 focus:border-red-600 focus:outline-none"
-                            />
-                        </div>
+                    {/* Last Name */}
+                    <div className="space-y-1">
+                        <label className="block font-semibold">Last Name</label>
+                        <input
+                            type="text"
+                            name="lastName"
+                            placeholder="Last Name"
+                            className="w-full px-4 py-3 border-2 border-gray-300 focus:border-red-600 focus:outline-none "
+                        />
                     </div>
-                    <div className="md:flex md:items-center md:justify-center md:gap-3 grid gap-3 mt-10">
-                        <div className="space-y-1 text-sm md:w-1/3 w-full">
-                            <label htmlFor="username" className="block font-semibold">Username*</label>
-                            <input
-                                type="text"
-                                name="username"
-                                id="username"
-                                placeholder="Username"
-                                className="w-full px-4 py-3  border-2 border-gray-300 focus:border-red-600 focus:outline-none"
-                            />
-                        </div>
-                        <div className="space-y-1 text-sm md:w-1/3 w-full">
-                            <label htmlFor="username" className="block font-semibold">Password*</label>
-                            <input
-                                type="text"
-                                name="username"
-                                id="username"
-                                placeholder="Password"
-                                className="w-full px-4 py-3  border-2 border-gray-300 focus:border-red-600 focus:outline-none"
-                            />
-                        </div>
-                    </div>
-                    <div className="md:flex md:items-center md:justify-center md:gap-3 grid gap-3 mt-10">
-                        <div className="w-full md:w-1/2">
-                            <button className="w-full bg-red-600 btn btn-neutral mt-4 mb-10">Register</button>
-                        </div>
-                    </div>
-                    <p className="text-xs text-center sm:px-6 dark:text-gray-600 py-2 font-semibold">Don't have an account?
-                        <Link to="/sign-in"><a rel="noopener noreferrer" href="#" className="underline dark:text-gray-800"> Sign In</a></Link>
-                    </p>
                 </div>
+
+                <div className="grid md:grid-cols-2 gap-4 mt-4">
+                    {/* Username */}
+                    <div className="space-y-1">
+                        <label className="block font-semibold">Username*</label>
+                        <input
+                            type="text"
+                            name="username"
+                            placeholder="Username"
+                            className="w-full px-4 py-3 border-2 border-gray-300 focus:border-red-600 focus:outline-none "
+                            required
+                        />
+                    </div>
+                    {/* Email */}
+                    <div className="space-y-1">
+                        <label className="block font-semibold">Email*</label>
+                        <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            placeholder="Email"
+                            className="w-full px-4 py-3 border-2 border-gray-300 focus:border-red-600 focus:outline-none "
+                            required
+                        />
+                    </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-4 mt-4">
+                    {/* Password */}
+                    <div className="space-y-1">
+                        <label className="block font-semibold">Password*</label>
+                        <input
+                            type="password"
+                            name="password"
+                            placeholder="Password"
+                            className="w-full px-4 py-3 border-2 border-gray-300 focus:border-red-600 focus:outline-none "
+                            required
+                        />
+                    </div>
+                    {/* Confirm Password */}
+                    <div className="space-y-1">
+                        <label className="block font-semibold">Confirm Password</label>
+                        <input
+                            type="password"
+                            name="confirmPassword"
+                            placeholder="Confirm Password"
+                            className="w-full px-4 py-3 border-2 border-gray-300 focus:border-red-600 focus:outline-none"
+                            required
+                        />
+                    </div>
+                </div>
+
+                {/* Register Button */}
+                <div className="mt-6">
+                    <button type="submit" className="w-full bg-red-600 py-3 text-white font-semibold rounded-md hover:bg-red-700 transition">
+                        Register
+                    </button>
+                </div>
+
+                {/* Sign In Link */}
+                <p className="text-center text-gray-400 text-sm mt-4">
+                    Already have an account?
+                    <Link to="/sign-in" className="text-red-500 hover:underline ml-1">Sign In</Link>
+                </p>
             </form>
         </div>
     );
