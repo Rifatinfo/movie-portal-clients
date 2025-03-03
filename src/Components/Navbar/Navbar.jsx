@@ -1,11 +1,12 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
-import { Bars3Icon , XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Link } from 'react-router-dom';
 
 const navigation = [
-    { name: 'Home', href: '/', current: true },
-    { name: 'All Movies', href: 'All-Movies', current: false },
-    { name: 'Add Movie', href: 'Add-Movie', current: false },
-    { name: 'My Favorites', href: 'My-Favorites', current: false },
+    { name: 'Home', href: '/' },
+    { name: 'All Movies', href: 'All-Movies' },
+    { name: 'Add Movie', href: 'Add-Movie' },
+    { name: 'My Favorites', href: 'My-Favorites' },
 ]
 
 function classNames(...classes) {
@@ -57,10 +58,10 @@ const Navbar = () => {
                             </div>
                         </div>
                         <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                            
+
                             <div className='md:flex md:gap-2 hidden'>
-                                <button className="rounded-4xl btn bg-white text-black">Sign In</button>
-                                <button className="rounded-4xl btn bg-white text-black">Register</button>
+                                <Link to="/sign-in"><button className="rounded-4xl btn bg-white text-black">Sign In</button></Link>
+                                <Link to="/register"><button className="rounded-4xl btn bg-white text-black">Register</button></Link>
                             </div>
 
                             {/* Profile dropdown */}
@@ -76,7 +77,7 @@ const Navbar = () => {
                                         />
                                     </MenuButton>
                                 </div>
-                                
+
                             </Menu>
                         </div>
                     </div>
@@ -99,8 +100,8 @@ const Navbar = () => {
                             </DisclosureButton>
                         ))}
                         <div className='flex gap-2 md:hidden'>
-                            <button className="rounded-4xl btn bg-white text-black">Sign In</button>
-                            <button className="rounded-4xl btn bg-white text-black">Register</button>
+                            <Link to="/sign-in"><button className="rounded-4xl btn bg-white text-black">Sign In</button></Link>
+                            <Link to="/register"><button className="rounded-4xl btn bg-white text-black">Register</button></Link>
                         </div>
                     </div>
                 </DisclosurePanel>
