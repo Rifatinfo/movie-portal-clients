@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { AiFillGoogleSquare } from "react-icons/ai";
 import { FaSquareGithub } from "react-icons/fa6";
 import { FaSquareXTwitter } from "react-icons/fa6";
+import { FaEye } from "react-icons/fa";
 
 
 const Login = () => {
@@ -44,6 +45,7 @@ const Login = () => {
                                 placeholder="Password"
                                 className="w-full px-4 py-3  border-2  focus:border-red-600 focus:outline-none"
                             />
+                            <button><FaEye /></button>
                             <div className="flex justify-end font-semibold text-xs dark:text-gray-600">
                                 <a rel="noopener noreferrer" href="">Forgot Password?</a>
                             </div>
