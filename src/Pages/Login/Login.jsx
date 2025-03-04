@@ -3,23 +3,40 @@ import { AiFillGoogleSquare } from "react-icons/ai";
 import { FaSquareGithub } from "react-icons/fa6";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 
 const Login = () => {
-    const handleLogin = e => {
+    const [showPassword, setShowPassword] = useState(false);
+    const {signInUser} = useContext(AuthContext)
+
+    const handleLogin = (e) => {
         e.preventDefault();
-        const email = e.target.name.value;
+
+        const email = e.target.email.value; 
         const password = e.target.password.value;
         const loginUser = { email, password };
         console.log(loginUser);
+        
+        signInUser(email, password)
+        .then(result => {
+           console.log(result.user)
+        })
+        .catch(error => {
+            console.log(error);
+        })
 
-        const regularExpression = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+        const regularExpression = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{6,16}$/;
+
         if (!regularExpression.test(password)) {
-            alert('At Least one uppercase, one lowercase , one number , one special character')
+            alert('Password must contain at least one uppercase, one lowercase, one number, and one special character.');
             return;
         }
 
-    }
+    };
+
     return (
         <div className="backdrop-blur-md bg-white/30 mt-10 ">
             <div className="flex justify-center items-center text-white ">
@@ -27,11 +44,11 @@ const Login = () => {
                     <h1 className="text-2xl font-bold text-center">Sign In</h1>
                     <form onSubmit={handleLogin} className="space-y-6">
                         <div className="space-y-1 text-sm">
-                            <label htmlFor="username" className="block font-semibold">Username</label>
+                            <label htmlFor="username" className="block font-semibold">email</label>
                             <input
                                 type="text"
-                                name="name"
-                                placeholder="Username"
+                                name="email"
+                                placeholder="Email"
                                 className="w-full px-4 py-3  border-2  focus:border-red-600 focus:outline-none"
                             />
                         </div>
@@ -39,13 +56,12 @@ const Login = () => {
                         <div className="space-y-1 text-sm">
                             <label htmlFor="username" className="block font-semibold">Password</label>
                             <input
-                                type="password"
+                                type={showPassword ? 'text' : 'password'}
                                 name="password"
-                                id="username"
                                 placeholder="Password"
-                                className="w-full px-4 py-3  border-2  focus:border-red-600 focus:outline-none"
+                                className="relative w-full px-4 py-3  border-2  focus:border-red-600 focus:outline-none"
                             />
-                            <button><FaEye /></button>
+                            <button onClick={() => setShowPassword(!showPassword)}>{showPassword ? <FaEye className="absolute -mt-4 -ml-8 text-xl" /> : <FaEyeSlash className="absolute -mt-4 -ml-8 text-xl"/>}</button>
                             <div className="flex justify-end font-semibold text-xs dark:text-gray-600">
                                 <a rel="noopener noreferrer" href="">Forgot Password?</a>
                             </div>
@@ -69,7 +85,7 @@ const Login = () => {
                     </div>
 
                     <p className="text-xs text-center sm:px-6 dark:text-gray-600 font-semibold">Don't have an account?
-                        <Link to="/register"><a rel="noopener noreferrer" href="#" className="underline dark:text-gray-800"> Sign up</a></Link>
+                        <Link to="/register"><div rel="noopener noreferrer" href="#" className="underline dark:text-gray-800"> Sign up</div></Link>
                     </p>
                 </div>
             </div>

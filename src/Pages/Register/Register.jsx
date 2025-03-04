@@ -1,28 +1,48 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Register = () => {
+    const { createUser } = useContext(AuthContext);
+
     const handleRegister = (e) => {
         e.preventDefault();
-        const firstName = e.target.firstName.value;
-        const lastName = e.target.lastName.value;
-        const username = e.target.username.value;
-        const email = e.target.email.value;
-        const password = e.target.password.value;
-        const confirmPassword = e.target.confirmPassword.value;
 
-        const RegisterUser = { firstName, lastName, username, email, password, confirmPassword };
-        console.log(RegisterUser);
-
-        if(password.length  < 6){
-           alert('Password Should be 6 character or longer')
-           return;
-        }
-        const regularExpression = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
-        if(!regularExpression.test(password)){
-           alert('At Least one uppercase, one lowercase , one number , one special character')
-           return;
-        }
+        const form = e.target;
+        const firstName = form.firstName?.value;
+        const lastName = form.lastName?.value;
+        const username = form.username?.value;
+        const email = form.email?.value;
+        const password = form.password?.value;
+        const confirmPassword = form.confirmPassword?.value;
+       
+        const registerUser = {firstName,lastName,username,email,password,confirmPassword}
+        console.log(registerUser);
         
+        // if (!firstName || !lastName || !username || !email || !password || !confirmPassword) {
+        //     alert("All fields are required!");
+        //     return;
+        // }
+
+        // if (password !== confirmPassword) {
+        //     alert("Passwords do not match!");
+        //     return;
+        // }
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+        if (!passwordRegex.test(password)) {
+            alert("Password must be at least 8 characters long, include one uppercase letter, one lowercase letter, one number, and one special character.");
+            return;
+        }
+
+        createUser(email, password)
+            .then((result) => {
+                console.log("User Created:", result.user);
+                alert("Registration Successful!");
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+                alert(error.message);
+            });
     };
 
     return (
@@ -39,6 +59,7 @@ const Register = () => {
                             name="firstName"
                             placeholder="First Name"
                             className="w-full px-4 py-3 border-2 border-gray-300 focus:border-red-600 focus:outline-none "
+                            required
                         />
                     </div>
                     {/* Last Name */}
@@ -49,6 +70,7 @@ const Register = () => {
                             name="lastName"
                             placeholder="Last Name"
                             className="w-full px-4 py-3 border-2 border-gray-300 focus:border-red-600 focus:outline-none "
+                            required
                         />
                     </div>
                 </div>
@@ -71,7 +93,6 @@ const Register = () => {
                         <input
                             type="email"
                             name="email"
-                            id="email"
                             placeholder="Email"
                             className="w-full px-4 py-3 border-2 border-gray-300 focus:border-red-600 focus:outline-none "
                             required
@@ -93,7 +114,7 @@ const Register = () => {
                     </div>
                     {/* Confirm Password */}
                     <div className="space-y-1">
-                        <label className="block font-semibold">Confirm Password</label>
+                        <label className="block font-semibold">Confirm Password*</label>
                         <input
                             type="password"
                             name="confirmPassword"
