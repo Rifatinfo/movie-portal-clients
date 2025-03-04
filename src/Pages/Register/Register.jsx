@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Register = () => {
     const { createUser } = useContext(AuthContext);
-
+    const navigate = useNavigate();
     const handleRegister = (e) => {
         e.preventDefault();
 
@@ -28,16 +28,18 @@ const Register = () => {
         //     alert("Passwords do not match!");
         //     return;
         // }
-        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
-        if (!passwordRegex.test(password)) {
-            alert("Password must be at least 8 characters long, include one uppercase letter, one lowercase letter, one number, and one special character.");
-            return;
-        }
+        // const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+        // if (!passwordRegex.test(password)) {
+        //     alert("Password must be at least 8 characters long, include one uppercase letter, one lowercase letter, one number, and one special character.");
+        //     return;
+        // }
 
         createUser(email, password)
             .then((result) => {
                 console.log("User Created:", result.user);
                 alert("Registration Successful!");
+                e.target.reset();
+                navigate('/');
             })
             .catch((error) => {
                 console.error("Error:", error);

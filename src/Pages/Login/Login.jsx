@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AiFillGoogleSquare } from "react-icons/ai";
 import { FaSquareGithub } from "react-icons/fa6";
 import { FaSquareXTwitter } from "react-icons/fa6";
@@ -10,7 +10,9 @@ import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
-    const {signInUser} = useContext(AuthContext)
+    const {signInUser} = useContext(AuthContext);
+
+    const navigate = useNavigate();
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -23,17 +25,19 @@ const Login = () => {
         signInUser(email, password)
         .then(result => {
            console.log(result.user)
+           e.target.reset();
+           navigate('/');
         })
         .catch(error => {
             console.log(error);
         })
 
-        const regularExpression = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{6,16}$/;
+        // const regularExpression = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{6,16}$/;
 
-        if (!regularExpression.test(password)) {
-            alert('Password must contain at least one uppercase, one lowercase, one number, and one special character.');
-            return;
-        }
+        // if (!regularExpression.test(password)) {
+        //     alert('Password must contain at least one uppercase, one lowercase, one number, and one special character.');
+        //     return;
+        // }
 
     };
 
