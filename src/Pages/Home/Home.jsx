@@ -1,8 +1,9 @@
+import MovieSlider from "../../Components/MovieSlider/MovieSlider";
 
 const Home = () => {
     return (
         <div>
-            <h1>Home</h1>
+            <MovieSlider/>
         </div>
     );
 };
