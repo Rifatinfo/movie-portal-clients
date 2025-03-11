@@ -1,27 +1,27 @@
-const AddMovie = () => {
-    const handleAddMovie = (e) => {
-      e.preventDefault();
-      
-      const movieName = e.target.movie.value;
-      const category = e.target.category.value;
-      const posterUrl = e.target.poster.value;
-      const duration = e.target.duration.value;
-      const releaseYear = e.target.year.value;
-      const rating = e.target.rating.value;
-  
-      console.log("Selected Movie:", movieName);
-      console.log("Category:", category);
-      console.log("Poster URL:", posterUrl);
-      console.log("Duration:", duration);
-      console.log("Release Year:", releaseYear);
-      console.log("Rating:", rating);
-    };
-  
+
+const UpdateMovie = () => {
+    const handleUpdateMovie = (e) => {
+        e.preventDefault();
+        
+        const movieName = e.target.movie.value;
+        const category = e.target.category.value;
+        const posterUrl = e.target.poster.value;
+        const duration = e.target.duration.value;
+        const releaseYear = e.target.year.value;
+        const rating = e.target.rating.value;
+    
+        console.log("Selected Movie:", movieName);
+        console.log("Category:", category);
+        console.log("Poster URL:", posterUrl);
+        console.log("Duration:", duration);
+        console.log("Release Year:", releaseYear);
+        console.log("Rating:", rating);
+      };
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
         <h1 className="text-center font-semibold text-2xl mb-20 text-black">Add New Movie</h1>
         <div className="w-full max-w-5xl">
-          <form onSubmit={handleAddMovie} className="bg-white p-6 rounded-lg shadow-lg w-full text-red-600">
+          <form onSubmit={handleUpdateMovie} className="bg-white p-6 rounded-lg shadow-lg w-full text-red-600">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label className="block mb-2 text-sm font-medium text-gray-700">Movie Name</label>
@@ -134,7 +134,6 @@ const AddMovie = () => {
         </div>
       </div>
     );
-  };
-  
-  export default AddMovie;
-  
+};
+
+export default UpdateMovie;
