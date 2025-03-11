@@ -6,6 +6,7 @@ import Home from "../Pages/Home/Home";
 import Roots from "../Roots/Roots";
 import Register from "../Pages/Register/Register";
 import Login from "../Pages/Login/Login";
+import AddMovie from "../Pages/AddMovie/AddMovie";
 
 
   const router = createBrowserRouter([
@@ -26,6 +27,10 @@ import Login from "../Pages/Login/Login";
           path: "/sign-in",
           element: <Login/>,
         },
+        {
+          path : "/add-movie",
+          element : <AddMovie/>
+        }
       ]
     },
   ]);

@@ -51,10 +51,10 @@ const Navbar = () => {
                                     src={user?.photoURL}
                                     className="h-8 w-auto"
                                 /> */}
-                                <p className='text-white font-extrabold'>Movie</p>
+                               <Link to="/"><p className='text-white font-extrabold'>Movie</p></Link>
                             </div>
                             <div className="hidden sm:ml-6 sm:block">
-                                <div className="flex space-x-4">
+                                <div className="flex items-center space-x-4">
                                     {navigation.map((item) => (
                                         <a
                                             key={item.name}
@@ -69,7 +69,7 @@ const Navbar = () => {
                                     ))}
                                     {user && (
                                         <>
-                                            <a className="bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" href="">Add Movie</a>
+                                            <Link to="/add-movie"><a className="bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" href="">Add Movie</a></Link>
                                             <a className="bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" href="">My Favorites</a>
                                         </> 
                                     )}
