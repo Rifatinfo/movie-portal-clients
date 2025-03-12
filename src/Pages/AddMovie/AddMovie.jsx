@@ -24,7 +24,7 @@ const AddMovie = () => {
       .then(res => res.json())
       .then(data => {
         console.log(data);
-        if(data.insertedId<0){
+        if(data.insertedId){
           Swal.fire({
             title: "Successfully Added Data",
             icon: "success",
@@ -79,12 +79,12 @@ const AddMovie = () => {
                 <label className="block mt-4 mb-2 text-sm font-medium text-gray-700">Poster URL</label>
                 <select name="poster" className="w-full p-2 border-2 rounded-lg focus:ring focus:border-red-600 focus:outline-none">
                   <option value="">Select Option</option>
-                  <option value="https://example.com/poster1.jpg">Poster 1</option>
-                  <option value="https://example.com/poster2.jpg">Poster 2</option>
-                  <option value="https://example.com/poster3.jpg">Poster 3</option>
-                  <option value="https://example.com/poster4.jpg">Poster 4</option>
-                  <option value="https://example.com/poster5.jpg">Poster 5</option>
-                  <option value="https://example.com/poster6.jpg">Poster 6</option>
+                  <option value="https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/popular/02.webp">Poster 1</option>
+                  <option value="https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/popular/01.webp">Poster 2</option>
+                  <option value="https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/popular/05.webp">Poster 3</option>
+                  <option value="https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/popular/03.webp">Poster 4</option>
+                  <option value="https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/popular/07.webp">Poster 5</option>
+                  <option value="https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/popular/06.webp">Poster 6</option>
                   <option value="https://example.com/poster7.jpg">Poster 7</option>
                   <option value="https://example.com/poster8.jpg">Poster 8</option>
                   <option value="https://example.com/poster9.jpg">Poster 9</option>

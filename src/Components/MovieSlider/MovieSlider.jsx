@@ -34,9 +34,9 @@ const MovieSlider = () => {
                 modules={[Autoplay]}
                 className="mySwiper mt-10"
             >
-                <SwiperSlide>
-                    <img src="https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/popular/03.webp" alt="" />
-                    <div className='mt-4 text-white'>
+                <SwiperSlide className='border-2 rounded-md '>
+                    <img className='rounded-md' src="https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/popular/03.webp" alt="" />
+                    <div className='mt-4 text-white p-2'>
                         <p className='text-xl font-semibold'>The Shawshank</p>
                         <p className='font-semibold'>Drama</p>
                         <div className='flex justify-between items-center text-red-600 font-semibold'>

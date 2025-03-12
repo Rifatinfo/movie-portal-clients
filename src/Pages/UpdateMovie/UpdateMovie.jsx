@@ -1,33 +1,56 @@
+import { useState } from "react";
+import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const UpdateMovie = () => {
+  const movie = useLoaderData();
+  const {_id,movieName,posterUrl,category,duration} = movie;
+  const [defaultMovie, setDefaultMovie] = useState({});
+
+  useState(() => {
+    setDefaultMovie(movie);
+  },[movie]);
     const handleUpdateMovie = (e) => {
         e.preventDefault();
-        
         const movieName = e.target.movie.value;
         const category = e.target.category.value;
         const posterUrl = e.target.poster.value;
         const duration = e.target.duration.value;
         const releaseYear = e.target.year.value;
         const rating = e.target.rating.value;
-    
-        console.log("Selected Movie:", movieName);
-        console.log("Category:", category);
-        console.log("Poster URL:", posterUrl);
-        console.log("Duration:", duration);
-        console.log("Release Year:", releaseYear);
-        console.log("Rating:", rating);
+        const updateMovie = {movieName, category, posterUrl, duration, releaseYear, rating}
+        
+         fetch(`http://localhost:5000/movies/${_id}`, {
+                method : 'PUT',
+                headers : {
+                  'content-type' : 'application/json'
+                },
+                body : JSON.stringify(updateMovie)
+              })
+              .then(res => res.json())
+              .then(data => {
+                console.log(data);
+                if(data.modifiedCount>0){
+                  Swal.fire({
+                    title: "Coffey Updated Successfully",
+                    icon: "success",
+                    draggable: true
+                  });
+                }
+              })
+
       };
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-        <h1 className="text-center font-semibold text-2xl mb-20 text-black">Add New Movie</h1>
+        <h1 className="text-center font-semibold text-2xl mb-20 text-black">Update Movie</h1>
         <div className="w-full max-w-5xl">
           <form onSubmit={handleUpdateMovie} className="bg-white p-6 rounded-lg shadow-lg w-full text-red-600">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label className="block mb-2 text-sm font-medium text-gray-700">Movie Name</label>
-                <select name="movie" className="w-full p-2 border-2 rounded-lg focus:ring focus:border-red-600 focus:outline-none">
-                  <option value="">Select Option</option>
-                  <option value="The Shawshank Redemption">The Shawshank Redemption</option>
+                <select onChange={(e) => setDefaultMovie({...defaultMovie , movieName : e.target.value})} value={defaultMovie.movieName} name="movie" className="w-full p-2 border-2 rounded-lg focus:ring focus:border-red-600 focus:outline-none">
+                  <option  value="">Select Option</option>
+                  <option  value="The Shawshank Redemption">The Shawshank Redemption</option>
                   <option value="The Godfather">The Godfather</option>
                   <option value="The Dark Knight">The Dark Knight</option>
                   <option value="Pulp Fiction">Pulp Fiction</option>

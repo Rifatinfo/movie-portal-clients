@@ -18,6 +18,7 @@ import UpdateMovie from "../Pages/UpdateMovie/UpdateMovie";
         {
           path: "/",
           element: <Home/>,
+          loader : () => fetch('http://localhost:5000/movies')
         },
         {
           path: "/register",
@@ -32,8 +33,9 @@ import UpdateMovie from "../Pages/UpdateMovie/UpdateMovie";
           element : <AddMovie/>
         },
         {
-          path : "/update-movie",
-          element : <UpdateMovie/>
+          path : "/update-movie/:id",
+          element : <UpdateMovie/>,
+          loader : ({params}) => fetch(`http://localhost:5000/movies/${params.id}`)
         }
       ]
     },
