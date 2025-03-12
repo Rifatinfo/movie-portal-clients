@@ -1,3 +1,5 @@
+import Swal from "sweetalert2";
+
 const AddMovie = () => {
     const handleAddMovie = (e) => {
       e.preventDefault();
@@ -9,12 +11,28 @@ const AddMovie = () => {
       const releaseYear = e.target.year.value;
       const rating = e.target.rating.value;
   
-      console.log("Selected Movie:", movieName);
-      console.log("Category:", category);
-      console.log("Poster URL:", posterUrl);
-      console.log("Duration:", duration);
-      console.log("Release Year:", releaseYear);
-      console.log("Rating:", rating);
+      const newMovie = {movieName, category, posterUrl, duration, releaseYear, rating}
+      console.log(newMovie);
+
+      fetch('http://localhost:5000/movies', {
+        method : 'POST',
+        headers : {
+          'content-type' : 'application/json'
+        },
+        body : JSON.stringify(newMovie)
+      })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        if(data.insertedId<0){
+          Swal.fire({
+            title: "Successfully Added Data",
+            icon: "success",
+            draggable: true
+          });
+        }
+      })
+      
     };
   
     return (
