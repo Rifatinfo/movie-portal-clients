@@ -85,12 +85,20 @@ const AddMovie = () => {
                   <option value="https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/popular/03.webp">Poster 4</option>
                   <option value="https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/popular/07.webp">Poster 5</option>
                   <option value="https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/popular/06.webp">Poster 6</option>
-                  <option value="https://example.com/poster7.jpg">Poster 7</option>
-                  <option value="https://example.com/poster8.jpg">Poster 8</option>
-                  <option value="https://example.com/poster9.jpg">Poster 9</option>
-                  <option value="https://example.com/poster10.jpg">Poster 10</option>
-                  <option value="https://example.com/poster11.jpg">Poster 11</option>
-                  <option value="https://example.com/poster12.jpg">Poster 12</option>
+                  <option value="https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/popular/04.webp">Poster 7</option>
+                  <option value="https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/latest/01.webp">Poster 8</option>
+                  <option value="https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/latest/02.webp">Poster 9</option>
+                  <option value="https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/latest/03.webp">Poster 10</option>
+                  <option value="https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/latest/04.webp">Poster 11</option>
+                  <option value="https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/latest/05.webp">Poster 12</option>
+                  <option value="https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/latest/06.webp">Poster 13</option>
+                  <option value="https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/latest/07.webp">Poster 14</option>
+                  <option value= "https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/recommended/01.webp">Poster 15</option>
+                  <option value="https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/recommended/03.webp">Poster 16</option>
+                  <option value="https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/recommended/02.webp">Poster 17</option>
+                  <option value="https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/recommended/04.webp">Poster 18</option>
+                  <option value="https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/recommended/06.webp">Poster 19</option>
+                  <option value="https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/recommended/07.webp">Poster 20</option>
                 </select>
               </div>
   
