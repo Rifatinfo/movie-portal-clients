@@ -46,7 +46,7 @@ const Navbar = () => {
                         </div>
                         <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                             <div className="flex shrink-0 items-center">
-                               <Link to="/"><p className='text-white text-4xl font-extrabold'>🎬</p></Link>
+                                <Link to="/"><p className='text-white text-4xl font-extrabold'>🎬</p></Link>
                             </div>
                             <div className="hidden sm:ml-6 sm:block">
                                 <div className="flex items-center space-x-4">
@@ -66,7 +66,7 @@ const Navbar = () => {
                                         <>
                                             <Link to="/add-movie"><a className="bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" href="">Add Movie</a></Link>
                                             <a className="bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" href="">My Favorites</a>
-                                        </> 
+                                        </>
                                     )}
 
 
@@ -81,21 +81,23 @@ const Navbar = () => {
                                 <Link to="/register"><button className="rounded-4xl btn bg-white text-black">Register</button></Link>
                             </div>
 
-                            {/* Profile dropdown */}
-                            <Menu as="div" className="relative ml-3">
-                                <div>
-                                    <MenuButton className="relative flex rounded-full bg-gray-800 text-sm focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden">
-                                        <span className="absolute -inset-1.5" />
-                                        <span className="sr-only">Open user menu</span>
-                                        <img
-                                            alt=""
-                                            src={user?.photoURL}
-                                            className="size-8 rounded-full"
-                                        />
-                                    </MenuButton>
-                                </div>
+                            {user && <>
+                                {/* Profile dropdown */}
+                                <Menu as="div" className="relative ml-3">
+                                    <div>
+                                        <MenuButton className="relative flex rounded-full bg-gray-800 text-sm focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden">
+                                            <span className="absolute -inset-1.5" />
+                                            <span className="sr-only">Open user menu</span>
+                                            <img
+                                                alt=""
+                                                src={user?.photoURL}
+                                                className="size-8 rounded-full"
+                                            />
+                                        </MenuButton>
+                                    </div>
 
-                            </Menu>
+                                </Menu>
+                            </>}
                         </div>
                     </div>
                 </div>

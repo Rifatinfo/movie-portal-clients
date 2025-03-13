@@ -53,7 +53,7 @@ const MovieCart = ({ movie , moviesData, setMoviesData}) => {
           </div>
         </div>
         <div className="flex items-center justify-center gap-4 mb-2 p-1.5 ">
-            <button className="border rounded-md text-xl p-2 bg-white text-red-600 border-none"><FaEye /></button>
+            <Link to={`details-movie/${_id}`}><button className="border rounded-md text-xl p-2 bg-white text-red-600 border-none"><FaEye /></button></Link>
             <Link to={`update-movie/${_id}`}><button className="border rounded-md text-xl p-2 bg-white text-red-600 border-none"><FaUserEdit /></button></Link>
             <button onClick={() => handleMovieDelete(_id)} className="border rounded-md text-xl p-2 bg-white text-red-600 border-none"><MdDelete /></button>
         </div>
