@@ -4,11 +4,20 @@ import Swal from "sweetalert2";
 
 const UpdateMovie = () => {
   const movie = useLoaderData();
-  const {_id,movieName,posterUrl,category,duration} = movie;
+  const {_id} = movie;
   const [defaultMovie, setDefaultMovie] = useState({});
-
+  const [movieCategory, setMovieCategory] = useState({});
+  const [poster, setPoster] = useState({});
+  const [durationData, setDurationData] = useState({});
+  const [yearData , setYearData] = useState({});
+  const [ratingData, setRatingData] = useState({});
   useState(() => {
     setDefaultMovie(movie);
+    setMovieCategory(movieCategory);
+    setPoster(poster);
+    setDurationData(durationData);
+    setYearData(yearData);
+    setRatingData(ratingData)
   },[movie]);
     const handleUpdateMovie = (e) => {
         e.preventDefault();
@@ -65,7 +74,7 @@ const UpdateMovie = () => {
                 </select>
   
                 <label className="block mt-4 mb-2 text-sm font-medium text-gray-700">Movie Category</label>
-                <select name="category" className="w-full p-2 border-2 rounded-lg focus:ring focus:border-red-600 focus:outline-none">
+                <select onChange={(e) => setMovieCategory({...defaultMovie , category : e.target.value})} value={defaultMovie.category} name="category" className="w-full p-2 border-2 rounded-lg focus:ring focus:border-red-600 focus:outline-none">
                   <option value="">Select Option</option>
                   <option>Drama</option>
                   <option>Action</option>
@@ -82,7 +91,7 @@ const UpdateMovie = () => {
                 </select>
   
                 <label className="block mt-4 mb-2 text-sm font-medium text-gray-700">Poster URL</label>
-                <select name="poster" className="w-full p-2 border-2 rounded-lg focus:ring focus:border-red-600 focus:outline-none">
+                <select  onChange={(e) => setPoster({...defaultMovie , posterUrl : e.target.value})} value={defaultMovie.posterUrl} name="poster" className="w-full p-2 border-2 rounded-lg focus:ring focus:border-red-600 focus:outline-none">
                   <option value="">Select Option</option>
                   <option value="https://example.com/poster1.jpg">Poster 1</option>
                   <option value="https://example.com/poster2.jpg">Poster 2</option>
@@ -101,7 +110,7 @@ const UpdateMovie = () => {
   
               <div>
                 <label className="block mb-2 text-sm font-medium text-gray-700">Duration</label>
-                <select name="duration" className="w-full p-2 border-2 rounded-lg focus:ring focus:border-red-600 focus:outline-none">
+                <select onChange={(e) => setDurationData({...defaultMovie , duration : e.target.value})} value={defaultMovie.duration} name="duration" className="w-full p-2 border-2 rounded-lg focus:ring focus:border-red-600 focus:outline-none">
                   <option value="">Select Option</option>
                   <option>90 min</option>
                   <option>120 min</option>
@@ -118,7 +127,7 @@ const UpdateMovie = () => {
                 </select>
   
                 <label className="block mt-4 mb-2 text-sm font-medium text-gray-700">Release Year</label>
-                <select name="year" className="w-full p-2 border-2 rounded-lg focus:ring focus:border-red-600 focus:outline-none">
+                <select onChange={(e) => setYearData({...defaultMovie , releaseYear : e.target.value})} value={defaultMovie.releaseYear} name="year" className="w-full p-2 border-2 rounded-lg focus:ring focus:border-red-600 focus:outline-none">
                   <option value="">Select Option</option>
                   <option>1990</option>
                   <option>1995</option>
@@ -135,7 +144,7 @@ const UpdateMovie = () => {
                 </select>
   
                 <label className="block mt-4 mb-2 text-sm font-medium text-gray-700">Rating</label>
-                <select name="rating" className="w-full p-2 border-2 rounded-lg focus:ring focus:border-red-600 focus:outline-none">
+                <select onChange={(e) => setRatingData({...defaultMovie , rating : e.target.value})} value={defaultMovie.rating} name="rating" className="w-full p-2 border-2 rounded-lg focus:ring focus:border-red-600 focus:outline-none">
                   <option value="">Select Option</option>
                   <option>4.1</option>
                   <option>4.2</option>
