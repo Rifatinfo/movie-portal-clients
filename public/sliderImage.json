@@ -22,5 +22,61 @@
     {
         "_id" : 6,
         "poster": "https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/popular/06.webp"
+    },
+    {
+        "_id" : 7,
+        "poster": "https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/popular/04.webp"
+    },
+    {
+        "_id" : 8,
+        "poster": "https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/latest/01.webp"
+    },
+    {
+        "_id" : 9,
+        "poster": "https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/latest/02.webp"
+    },
+    {
+        "_id" : 10,
+        "poster": "https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/latest/03.webp"
+    },
+    {
+        "_id" : 11,
+        "poster": "https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/latest/04.webp"
+    },
+    {
+        "_id" : 12,
+        "poster": "https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/latest/05.webp"
+    },
+    {
+        "_id" : 13,
+        "poster": "https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/latest/06.webp"
+    },
+    {
+        "_id" : 14,
+        "poster": "https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/latest/07.webp"
+    },
+    {
+        "_id" : 15,
+        "poster": "https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/recommended/01.webp"
+    },
+    {
+        "_id" : 16,
+        "poster": "https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/recommended/03.webp"
+    },
+    {
+        "_id" : 17,
+        "poster": "https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/recommended/02.webp"
+    },
+    {
+        "_id" : 20,
+        "poster": "https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/recommended/04.webp"
+    },
+    {
+        "_id" : 21,
+        "poster": "https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/recommended/06.webp"
+    },
+    {
+        "_id" : 21,
+        "poster": "https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/recommended/07.webp"
     }
 ]
