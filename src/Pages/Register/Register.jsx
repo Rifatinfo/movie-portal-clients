@@ -48,8 +48,8 @@ const Register = () => {
     };
 
     return (
-        <div className="flex items-center justify-center min-h-screen">
-            <form onSubmit={handleRegister} className="bg-black text-white max-w-6xl mx-auto p-8 rounded-md">
+        <div className="flex items-center justify-center min-h-[calc(100vh-64px-300px)] ">
+            <form onSubmit={handleRegister} className="bg-black text-white max-w-6xl mx-auto p-8 rounded-md border border-white">
                 <h1 className="text-2xl font-bold text-center mb-6">Create Your Account</h1>
 
                 <div className="grid md:grid-cols-2 gap-4">

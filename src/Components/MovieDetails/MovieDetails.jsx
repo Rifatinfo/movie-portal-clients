@@ -6,8 +6,8 @@ const MovieDetails = () => {
     console.log(movieDetails);
 
     return (
-        <div className="border text-white min-h-[calc(100vh-64px-190px)]">
-            <div className="mt-[80px]">
+        <div className="border text-white min-h-[calc(100vh-64px-255px)]">
+            <div>
                 <div className="flex flex-col md:flex-row justify-center md:items-start items-center md:gap-20 gap-6 mb-20 mt-20 md:p-0 p-2">
                     <div className="border-4 rounded-lg">
                         <img className="mx-auto w-full max-w-xs rounded-lg" src={posterUrl} alt={movieName} />

@@ -42,7 +42,7 @@ const Login = () => {
     };
 
     return (
-        <div className="backdrop-blur-md bg-white/30 mt-10 ">
+        <div className="backdrop-blur-md  mt-10 min-h-[calc(100vh-64px-300px)] ">
             <div className="flex justify-center items-center text-white ">
                 <div className="w-full max-w-md p-8 space-y-3 rounded-xl border bg-black">
                     <h1 className="text-2xl font-bold text-center">Sign In</h1>
