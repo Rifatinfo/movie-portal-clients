@@ -32,7 +32,7 @@ const Navbar = () => {
 
     return (
         <div>
-            <Disclosure as="nav" className="bg-black">
+            <Disclosure as="nav" className="bg-red-600 text-white fixed w-full z-50">
                 <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                     <div className="relative flex h-16 items-center justify-between">
                         <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -46,12 +46,7 @@ const Navbar = () => {
                         </div>
                         <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                             <div className="flex shrink-0 items-center">
-                                {/* <img
-                                    alt="Your Company"
-                                    src={user?.photoURL}
-                                    className="h-8 w-auto"
-                                /> */}
-                               <Link to="/"><p className='text-white font-extrabold'>Movie</p></Link>
+                               <Link to="/"><p className='text-white text-4xl font-extrabold'>🎬</p></Link>
                             </div>
                             <div className="hidden sm:ml-6 sm:block">
                                 <div className="flex items-center space-x-4">
@@ -60,7 +55,7 @@ const Navbar = () => {
                                             key={item.name}
                                             href={item.href}
                                             aria-current={item.current ? 'page' : undefined}
-                                            className="bg-gray-900  text-gray-300 hover:bg-gray-700 hover:text-white',
+                                            className="  text-gray-300 font-semibold',
                                                 'rounded-md px-3 py-2 text-sm font-medium"
                                         >
                                             {item.name}
