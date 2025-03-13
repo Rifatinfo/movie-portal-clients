@@ -1,0 +1,26 @@
+[
+    {   
+        "_id" : 1,
+        "poster": "https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/popular/02.webp"
+    },
+    {
+        "_id" : 2,
+        "poster": "https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/popular/01.webp"
+    },
+    {
+        "_id" : 3,
+        "poster": "https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/popular/05.webp"
+    },
+    {
+        "_id" : 4,
+        "poster": "https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/popular/03.webp"
+    },
+    {
+        "_id" : 5,
+        "poster": "https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/popular/07.webp"
+    },
+    {
+        "_id" : 6,
+        "poster": "https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/popular/06.webp"
+    }
+]
