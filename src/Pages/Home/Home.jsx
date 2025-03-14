@@ -10,6 +10,17 @@ const Home = () => {
   const feature = useLoaderData();
   const [moviesData, setMoviesData] = useState(loadedMovies);
   const [featureData, setFeatureData] = useState([]);
+  const [sort, setSort] = useState('');
+
+  const handleSort = (sortType) => {
+    setSort(sortType);
+
+    if (sortType === "rating") {
+      setFeatureData((prevData) =>
+        [...prevData].sort((a, b) => a.rating - b.rating) // Sorting in ascending order
+      );
+    }
+  };
 
   useEffect(() => {
        fetch('http://localhost:5000/feature-movie')
@@ -31,23 +42,24 @@ const Home = () => {
                   <sup className="text-red-600">{feature.length}</sup>{" "}
                 </p>
                 <div>
-                  <div className="dropdown dropdown-start ">
+                <div className="dropdown dropdown-start">
                     <div
+                      onClick={() => handleSort("rating")}
                       tabIndex={0}
                       role="button"
                       className="btn m-1 bg-red-600 text-white border-none shadow-none"
                     >
-                      Sort By
+                      {sort ? `Sort by ${sort}` : "Sort By"}
                     </div>
                     <ul
                       tabIndex={0}
                       className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
                     >
                       <li className="text-red-600">
-                        <a>rating</a>
+                        <a onClick={() => handleSort("rating")}>Rating</a>
                       </li>
                     </ul>
-                  </div>
+                </div>
                 </div>
               </div>
             </div>
