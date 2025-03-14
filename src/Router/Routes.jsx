@@ -8,6 +8,8 @@ import Login from "../Pages/Login/Login";
 import AddMovie from "../Pages/AddMovie/AddMovie";
 import UpdateMovie from "../Pages/UpdateMovie/UpdateMovie";
 import MovieDetails from "../Components/MovieDetails/MovieDetails";
+// import FeatureMovie from "../Components/featureMovie/featureMovie";
+import FeatureDetails from "../Components/FeatureDetails/FeatureDetails";
 
 
   const router = createBrowserRouter([
@@ -32,6 +34,11 @@ import MovieDetails from "../Components/MovieDetails/MovieDetails";
         {
           path : "/add-movie",
           element : <AddMovie/>
+        },
+        {
+          path : "/feature-movie/:id",
+          element : <FeatureDetails/>,
+          loader : ({params}) => fetch(`http://localhost:5000/feature-movie/${params.id}`)
         },
         {
           path : "/update-movie/:id",

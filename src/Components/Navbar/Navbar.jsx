@@ -6,9 +6,8 @@ import { AuthContext } from '../../providers/AuthProvider';
 
 const navigation = [
     { name: 'Home', href: '/' },
-    { name: 'All Movies', href: 'All-Movies' },
-    // { name: 'Add Movie', href: 'Add-Movie' },
-    // { name: 'My Favorites', href: 'My-Favorites' },
+    { name: 'All Movies', href: '/' },
+  
 ]
 
 function classNames(...classes) {
