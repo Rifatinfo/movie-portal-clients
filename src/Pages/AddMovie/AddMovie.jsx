@@ -11,7 +11,7 @@ const AddMovie = () => {
       const releaseYear = e.target.year.value;
       const rating = e.target.rating.value;
   
-      const newMovie = {movieName, category, posterUrl, duration, releaseYear, rating}
+      const newMovie = {movieName, category, posterUrl, duration, releaseYear, rating, isCompleted : false}
       console.log(newMovie);
 
       fetch('http://localhost:5000/movies', {

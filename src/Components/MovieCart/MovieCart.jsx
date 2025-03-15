@@ -3,9 +3,10 @@ import { FaUserEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import { FaStar } from "react-icons/fa";
 
 const MovieCart = ({ movie , moviesData, setMoviesData}) => {
-    const {_id,movieName,posterUrl,category,duration} = movie;
+    const {_id,movieName,posterUrl,category,duration, isCompleted} = movie;
     const handleMovieDelete = (_id) => {
         Swal.fire({
             title: "Are you sure?",
@@ -37,6 +38,23 @@ const MovieCart = ({ movie , moviesData, setMoviesData}) => {
             }
           });
     }
+    const handleUpdateStatus = (id) => {
+      fetch(`http://localhost:5000/status/${id}`, {
+        method: "PATCH"
+      })
+        .then(res => res.json())
+        .then(result => {
+          console.log(result);
+    
+          // Ensure state updates correctly
+          const newData = moviesData.map((schedule) =>
+            schedule._id === id ? { ...schedule, isCompleted: true } : schedule
+          );
+    
+          setMoviesData(newData);
+        });
+    };
+    
   return (
     <div>
       <div className="border ">
@@ -47,9 +65,21 @@ const MovieCart = ({ movie , moviesData, setMoviesData}) => {
         <div className="mt-4 text-white p-1.5 rounded-md">
           <p className="text-xl font-semibold">{movieName}</p>
           <p className="font-semibold">{category}</p>
-          <div className="flex justify-between items-center text-red-600 font-semibold">
-            <p>Ratings</p>
-            <p>1h : {duration}</p>
+          <div className="flex justify-between items-center  font-semibold">
+              <div className="flex gap-1">
+              <p onClick={() => handleUpdateStatus(_id)}>
+                {isCompleted ? (
+                  <FaStar className="text-xl text-red-600" />
+                ) : (
+                  <FaStar className="text-xl" />
+                )}
+              </p>
+              <p onClick={() => handleUpdateStatus(_id)}>{isCompleted ? <FaStar className="text-xl text-red-600" /> : <FaStar className="text-xl" />}</p>
+              <p onClick={() => handleUpdateStatus(_id)}>{isCompleted ? <FaStar className="text-xl text-red-600" /> : <FaStar className="text-xl" />}</p>
+              <p onClick={() => handleUpdateStatus(_id)}>{isCompleted ? <FaStar className="text-xl text-red-600" /> : <FaStar className="text-xl" />}</p>
+              <p onClick={() => handleUpdateStatus(_id)}>{isCompleted ? <FaStar className="text-xl text-red-600" /> : <FaStar className="text-xl" />}</p>
+              </div>
+            <p className="text-red-600">1h : {duration}</p>
           </div>
         </div>
         <div className="flex items-center justify-center gap-4 mb-2 p-1.5 ">
