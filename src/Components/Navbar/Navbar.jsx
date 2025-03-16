@@ -6,7 +6,7 @@ import { AuthContext } from '../../providers/AuthProvider';
 
 const navigation = [
     { name: 'Home', href: '/' },
-    { name: 'All Movies', href: '/' },
+    { name: 'All Movies', href: '/all-movies' },
   
 ]
 
@@ -63,8 +63,10 @@ const Navbar = () => {
                                     ))}
                                     {user && (
                                         <>
-                                            <Link to="/add-movie"><a className="bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" href="">Add Movie</a></Link>
-                                            <a className="bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" href="">My Favorites</a>
+                                            <Link to="/add-movie"><a className="text-gray-300 font-semibold',
+                                                'rounded-md px-3 py-2 text-sm font-medium" href="">Add Movie</a></Link>
+                                            <Link to="/my-favorite"><a className="text-gray-300 font-semibold',
+                                                'rounded-md px-3 py-2 text-sm font-medium" href="">My Favorites</a></Link>
                                         </>
                                     )}
 

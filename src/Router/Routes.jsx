@@ -10,6 +10,11 @@ import UpdateMovie from "../Pages/UpdateMovie/UpdateMovie";
 import MovieDetails from "../Components/MovieDetails/MovieDetails";
 // import FeatureMovie from "../Components/featureMovie/featureMovie";
 import FeatureDetails from "../Components/FeatureDetails/FeatureDetails";
+import AllMovie from "../Pages/AllMovie/AllMovie";
+import AllMovieDetails from "../Components/AllMovieDetails/AllMovieDetails";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import MyFavorite from "../Pages/MyFavorite/MyFavorite";
+
 
 
   const router = createBrowserRouter([
@@ -49,6 +54,20 @@ import FeatureDetails from "../Components/FeatureDetails/FeatureDetails";
           path : "/details-movie/:id",
           element : <MovieDetails/>,
           loader : ({params}) => fetch(`http://localhost:5000/movies/${params.id}`)
+        },
+        {
+          path : '/all-movies',
+          element : <AllMovie/>,
+          loader : () => fetch('http://localhost:5000/all-movie')
+        },
+        {
+          path : '/all-movies/:id',
+          element : <PrivateRoute><AllMovieDetails/></PrivateRoute>,
+          loader : ({params}) => fetch(`http://localhost:5000/all-movie/${params.id}`)
+        },
+        {
+          path : '/my-favorite',
+          element : <MyFavorite/>
         }
       ]
     },
