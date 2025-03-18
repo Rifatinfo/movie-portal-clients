@@ -8,12 +8,12 @@ import Login from "../Pages/Login/Login";
 import AddMovie from "../Pages/AddMovie/AddMovie";
 import UpdateMovie from "../Pages/UpdateMovie/UpdateMovie";
 import MovieDetails from "../Components/MovieDetails/MovieDetails";
-// import FeatureMovie from "../Components/featureMovie/featureMovie";
 import FeatureDetails from "../Components/FeatureDetails/FeatureDetails";
 import AllMovie from "../Pages/AllMovie/AllMovie";
 import AllMovieDetails from "../Components/AllMovieDetails/AllMovieDetails";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import MyFavorite from "../Pages/MyFavorite/MyFavorite";
+import ErrorPage from "../Components/ErrorPage/ErrorPage";
 
 
 
@@ -21,7 +21,7 @@ import MyFavorite from "../Pages/MyFavorite/MyFavorite";
     {
       path: "/",
       element: <Roots/>,
-    //   errorElement: <ErrorPage />,
+      errorElement: <ErrorPage />,
       children: [
         {
           path: "/",
