@@ -13,7 +13,7 @@ import AllMovie from "../Pages/AllMovie/AllMovie";
 import AllMovieDetails from "../Components/AllMovieDetails/AllMovieDetails";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import MyFavorite from "../Pages/MyFavorite/MyFavorite";
-import ErrorPage from "../Components/ErrorPage/ErrorPage";
+// import ErrorPage from "../Components/ErrorPage/ErrorPage";
 
 
 
@@ -21,12 +21,12 @@ import ErrorPage from "../Components/ErrorPage/ErrorPage";
     {
       path: "/",
       element: <Roots/>,
-      errorElement: <ErrorPage />,
+      // errorElement: <ErrorPage />,
       children: [
         {
           path: "/",
           element: <Home/>,
-          loader : () => fetch('http://localhost:5000/movies')
+          loader : () => fetch('https://movie-portal-server-npzb0dodo-rifatinfos-projects.vercel.app/movies')
         },
         {
           path: "/register",
@@ -43,32 +43,32 @@ import ErrorPage from "../Components/ErrorPage/ErrorPage";
         {
           path : "/feature-movie/:id",
           element : <FeatureDetails/>,
-          loader : ({params}) => fetch(`http://localhost:5000/feature-movie/${params.id}`)
+          loader : ({params}) => fetch(`https://movie-portal-server-npzb0dodo-rifatinfos-projects.vercel.app/feature-movie/${params.id}`)
         },
         {
           path : "/update-movie/:id",
           element : <UpdateMovie/>,
-          loader : ({params}) => fetch(`http://localhost:5000/movies/${params.id}`)
+          loader : ({params}) => fetch(`https://movie-portal-server-npzb0dodo-rifatinfos-projects.vercel.app/movies/${params.id}`)
         },
         {
           path : "/details-movie/:id",
           element : <MovieDetails/>,
-          loader : ({params}) => fetch(`http://localhost:5000/movies/${params.id}`)
+          loader : ({params}) => fetch(`https://movie-portal-server-npzb0dodo-rifatinfos-projects.vercel.app/movies/${params.id}`)
         },
         {
           path : '/all-movies',
           element : <AllMovie/>,
-          loader : () => fetch('http://localhost:5000/all-movie')
+          loader : () => fetch('https://movie-portal-server-npzb0dodo-rifatinfos-projects.vercel.app/all-movie')
         },
         {
           path : '/all-movies/:id',
           element : <PrivateRoute><AllMovieDetails/></PrivateRoute>,
-          loader : ({params}) => fetch(`http://localhost:5000/all-movie/${params.id}`)
+          loader : ({params}) => fetch(`https://movie-portal-server-npzb0dodo-rifatinfos-projects.vercel.app/all-movie/${params.id}`)
         },
         {
           path : '/my-favorite',
           element : <MyFavorite/>,
-          loader : () => fetch('http://localhost:5000/my-favourite')
+          loader : () => fetch('https://movie-portal-server-npzb0dodo-rifatinfos-projects.vercel.app/my-favourite')
         }
       ]
     },

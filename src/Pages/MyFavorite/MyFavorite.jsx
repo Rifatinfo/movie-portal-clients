@@ -20,7 +20,7 @@ const MyFavorite = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/my-favourite/${_id}`, {
+                fetch(`https://movie-portal-server-npzb0dodo-rifatinfos-projects.vercel.app/my-favourite/${_id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())

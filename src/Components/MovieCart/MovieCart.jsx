@@ -18,7 +18,7 @@ const MovieCart = ({ movie , moviesData, setMoviesData}) => {
             confirmButtonText: "Yes, delete it!"
           }).then((result) => {
             if (result.isConfirmed) {
-            fetch(`http://localhost:5000/movies/${_id}`,{
+            fetch(`https://movie-portal-server-npzb0dodo-rifatinfos-projects.vercel.app/movies/${_id}`,{
                 method : "DELETE"
             })
             .then(res => res.json())
@@ -39,7 +39,7 @@ const MovieCart = ({ movie , moviesData, setMoviesData}) => {
           });
     }
     const handleUpdateStatus = (id) => {
-      fetch(`http://localhost:5000/status/${id}`, {
+      fetch(`https://movie-portal-server-npzb0dodo-rifatinfos-projects.vercel.app/status/${id}`, {
         method: "PATCH"
       })
         .then(res => res.json())
