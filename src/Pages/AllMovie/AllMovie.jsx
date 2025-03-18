@@ -1,11 +1,35 @@
 import { useState } from "react";
 import { FaEye } from "react-icons/fa6";
 import { Link, useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const AllMovie = () => {
     const allMovieData = useLoaderData();
     const [allMovie, setAllMovieData] = useState(allMovieData)
     console.log(allMovie, setAllMovieData);
+
+    const handleAddToCart = (obj) =>{
+       console.log(obj);
+
+       fetch('http://localhost:5000/my-favourite',{
+        method : 'POST',
+        headers : {
+          'content-type' : 'application/json'
+        },
+        body : JSON.stringify(obj)
+       })
+       .then(res => res.json())
+      .then(data => {
+              console.log(data);
+              if(data.insertedId){
+                Swal.fire({
+                  title: "Successfully Added My Wish List",
+                  icon: "success",
+                  draggable: true
+                });
+              }
+            })
+    }
     
     return (
         <div className="max-w-7xl mx-auto">
@@ -28,7 +52,7 @@ const AllMovie = () => {
                           <FaEye />
                         </button>
                       </Link>
-                      <button className="btn border rounded-md text-xl p-1 bg-white text-red-600 border-none">
+                      <button onClick={() => handleAddToCart(fre)} className="btn border rounded-md text-xl p-1 bg-white text-red-600 border-none">
                           Add To Cart
                         </button>
                     </div>

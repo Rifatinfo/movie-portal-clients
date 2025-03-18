@@ -67,7 +67,8 @@ import MyFavorite from "../Pages/MyFavorite/MyFavorite";
         },
         {
           path : '/my-favorite',
-          element : <MyFavorite/>
+          element : <MyFavorite/>,
+          loader : () => fetch('http://localhost:5000/my-favourite')
         }
       ]
     },
