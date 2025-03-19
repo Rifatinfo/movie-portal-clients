@@ -5,13 +5,15 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyDw7sy-v_zQsfmDCp390py047aMOFAssVk",
-  authDomain: "movie-portal-e466c.firebaseapp.com",
-  projectId: "movie-portal-e466c",
-  storageBucket: "movie-portal-e466c.firebasestorage.app",
-  messagingSenderId: "814495861103",
-  appId: "1:814495861103:web:c2d13ade17caea2491409a"
+  apiKey: "AIzaSyBcQOSzoz4vN8KmUNdiuujuB6w1YKMND6w",
+  authDomain: "movie-portal-b70d9.firebaseapp.com",
+  projectId: "movie-portal-b70d9",
+  storageBucket: "movie-portal-b70d9.firebasestorage.app",
+  messagingSenderId: "104332814219",
+  appId: "1:104332814219:web:83f83cab6c42003415f18e",
+  measurementId: "G-EZ9NKW1PED"
 };
 
 // Initialize Firebase
