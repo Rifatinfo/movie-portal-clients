@@ -29,7 +29,7 @@ const UpdateMovie = () => {
         const rating = e.target.rating.value;
         const updateMovie = {movieName, category, posterUrl, duration, releaseYear, rating}
         
-         fetch(`https://movie-portal-server-npzb0dodo-rifatinfos-projects.vercel.app/movies/${_id}`, {
+         fetch(`http://localhost:5000/movies/${_id}`, {
                 method : 'PUT',
                 headers : {
                   'content-type' : 'application/json'

@@ -11,7 +11,7 @@ const AllMovie = () => {
     const handleAddToCart = (obj) =>{
        console.log(obj);
 
-       fetch('https://movie-portal-server-npzb0dodo-rifatinfos-projects.vercel.app/my-favourite',{
+       fetch('http://localhost:5000/my-favourite',{
         method : 'POST',
         headers : {
           'content-type' : 'application/json'

@@ -14,7 +14,7 @@ const AddMovie = () => {
       const newMovie = {movieName, category, posterUrl, duration, releaseYear, rating, isCompleted : false}
       console.log(newMovie);
 
-      fetch('https://movie-portal-server-npzb0dodo-rifatinfos-projects.vercel.app/movies', {
+      fetch('http://localhost:5000/movies', {
         method : 'POST',
         headers : {
           'content-type' : 'application/json'

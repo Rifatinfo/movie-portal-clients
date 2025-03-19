@@ -23,7 +23,7 @@ const Home = () => {
   };
 
   useEffect(() => {
-       fetch('https://movie-portal-server-npzb0dodo-rifatinfos-projects.vercel.app/feature-movie')
+       fetch('http://localhost:5000/feature-movie')
        .then(res => res.json())
        .then(data => setFeatureData(data))
   },[])

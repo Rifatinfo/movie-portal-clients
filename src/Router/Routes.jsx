@@ -26,7 +26,7 @@ import MyFavorite from "../Pages/MyFavorite/MyFavorite";
         {
           path: "/",
           element: <Home/>,
-          loader : () => fetch('https://movie-portal-server-npzb0dodo-rifatinfos-projects.vercel.app/movies')
+          loader : () => fetch('http://localhost:5000/movies')
         },
         {
           path: "/register",
@@ -43,32 +43,32 @@ import MyFavorite from "../Pages/MyFavorite/MyFavorite";
         {
           path : "/feature-movie/:id",
           element : <FeatureDetails/>,
-          loader : ({params}) => fetch(`https://movie-portal-server-npzb0dodo-rifatinfos-projects.vercel.app/feature-movie/${params.id}`)
+          loader : ({params}) => fetch(`http://localhost:5000/feature-movie/${params.id}`)
         },
         {
           path : "/update-movie/:id",
           element : <UpdateMovie/>,
-          loader : ({params}) => fetch(`https://movie-portal-server-npzb0dodo-rifatinfos-projects.vercel.app/movies/${params.id}`)
+          loader : ({params}) => fetch(`http://localhost:5000/movies/${params.id}`)
         },
         {
           path : "/details-movie/:id",
           element : <MovieDetails/>,
-          loader : ({params}) => fetch(`https://movie-portal-server-npzb0dodo-rifatinfos-projects.vercel.app/movies/${params.id}`)
+          loader : ({params}) => fetch(`http://localhost:5000/movies/${params.id}`)
         },
         {
           path : '/all-movies',
           element : <AllMovie/>,
-          loader : () => fetch('https://movie-portal-server-npzb0dodo-rifatinfos-projects.vercel.app/all-movie')
+          loader : () => fetch('http://localhost:5000/all-movie')
         },
         {
           path : '/all-movies/:id',
           element : <PrivateRoute><AllMovieDetails/></PrivateRoute>,
-          loader : ({params}) => fetch(`https://movie-portal-server-npzb0dodo-rifatinfos-projects.vercel.app/all-movie/${params.id}`)
+          loader : ({params}) => fetch(`http://localhost:5000/all-movie/${params.id}`)
         },
         {
           path : '/my-favorite',
           element : <MyFavorite/>,
-          loader : () => fetch('https://movie-portal-server-npzb0dodo-rifatinfos-projects.vercel.app/my-favourite')
+          loader : () => fetch('http://localhost:5000/my-favourite')
         }
       ]
     },
