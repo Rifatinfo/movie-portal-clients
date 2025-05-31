@@ -26,7 +26,7 @@ import MyFavorite from "../Pages/MyFavorite/MyFavorite";
         {
           path: "/",
           element: <Home/>,
-          loader : () => fetch('http://localhost:5000/movies')
+          loader : () => fetch('https://movie-portal-server-92li.onrender.com/movies')
         },
         {
           path: "/register",
@@ -43,32 +43,32 @@ import MyFavorite from "../Pages/MyFavorite/MyFavorite";
         {
           path : "/feature-movie/:id",
           element : <FeatureDetails/>,
-          loader : ({params}) => fetch(`http://localhost:5000/feature-movie/${params.id}`)
+          loader : ({params}) => fetch(`https://movie-portal-server-92li.onrender.com/feature-movie/${params.id}`)
         },
         {
           path : "/update-movie/:id",
           element : <UpdateMovie/>,
-          loader : ({params}) => fetch(`http://localhost:5000/movies/${params.id}`)
+          loader : ({params}) => fetch(`https://movie-portal-server-92li.onrender.com/movies/${params.id}`)
         },
         {
           path : "/details-movie/:id",
           element : <MovieDetails/>,
-          loader : ({params}) => fetch(`http://localhost:5000/movies/${params.id}`)
+          loader : ({params}) => fetch(`https://movie-portal-server-92li.onrender.com/movies/${params.id}`)
         },
         {
           path : '/all-movies',
           element : <AllMovie/>,
-          loader : () => fetch('http://localhost:5000/all-movie')
+          loader : () => fetch('https://movie-portal-server-92li.onrender.com/all-movie')
         },
         {
           path : '/all-movies/:id',
           element : <PrivateRoute><AllMovieDetails/></PrivateRoute>,
-          loader : ({params}) => fetch(`http://localhost:5000/all-movie/${params.id}`)
+          loader : ({params}) => fetch(`https://movie-portal-server-92li.onrender.com/all-movie/${params.id}`)
         },
         {
           path : '/my-favorite',
           element : <MyFavorite/>,
-          loader : () => fetch('http://localhost:5000/my-favourite')
+          loader : () => fetch('https://movie-portal-server-92li.onrender.com/my-favourite')
         }
       ]
     },

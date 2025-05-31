@@ -29,7 +29,7 @@ const UpdateMovie = () => {
         const rating = e.target.rating.value;
         const updateMovie = {movieName, category, posterUrl, duration, releaseYear, rating}
         
-         fetch(`http://localhost:5000/movies/${_id}`, {
+         fetch(`https://movie-portal-server-92li.onrender.com/movies/${_id}`, {
                 method : 'PUT',
                 headers : {
                   'content-type' : 'application/json'

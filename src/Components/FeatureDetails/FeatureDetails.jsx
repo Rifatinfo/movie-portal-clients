@@ -11,7 +11,7 @@ const FeatureDetails = () => {
             <div>
                 <div className="flex flex-col md:flex-row justify-center md:items-start items-center md:gap-20 gap-6 mb-20 mt-20 md:p-0 p-2">
                     <div className="border-4 rounded-lg">
-                        <img className="mx-auto w-full max-w-xs rounded-lg" src={poster} alt={poster} />
+                        <img className="mx-auto w-full max-w-xs rounded-lg" src={poster} alt='Not Found' />
                     </div>
                     <div className="space-y-3 text-center md:text-left">
                         <p className="font-semibold">Movie Name: <span className="text-red-600">{title}</span></p>

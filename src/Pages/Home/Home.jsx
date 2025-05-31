@@ -23,7 +23,7 @@ const Home = () => {
   };
 
   useEffect(() => {
-       fetch('http://localhost:5000/feature-movie')
+       fetch('https://movie-portal-server-92li.onrender.com/feature-movie')
        .then(res => res.json())
        .then(data => setFeatureData(data))
   },[])
@@ -67,7 +67,7 @@ const Home = () => {
               {featureData.map((fre) => (
                 <div>
                   <div className="border ">
-                    <img src={fre.poster} alt="" />
+                    <img src="https://templates.iqonic.design/streamit-dist/frontend/html/assets/images/movies/latest/01.webp" alt="" />
                     <div className="mt-4 text-white p-1.5 rounded-md">
                       <p className="text-xl font-semibold">{fre.title}</p>
                       <p className="font-semibold">{fre.category}</p>

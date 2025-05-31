@@ -14,7 +14,7 @@ const AddMovie = () => {
       const newMovie = {movieName, category, posterUrl, duration, releaseYear, rating, isCompleted : false}
       console.log(newMovie);
 
-      fetch('http://localhost:5000/movies', {
+      fetch('https://movie-portal-server-92li.onrender.com/movies', {
         method : 'POST',
         headers : {
           'content-type' : 'application/json'

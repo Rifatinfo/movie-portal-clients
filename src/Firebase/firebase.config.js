@@ -7,17 +7,17 @@ import { initializeApp } from "firebase/app";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyBcQOSzoz4vN8KmUNdiuujuB6w1YKMND6w",
-  authDomain: "movie-portal-b70d9.firebaseapp.com",
-  projectId: "movie-portal-b70d9",
-  storageBucket: "movie-portal-b70d9.firebasestorage.app",
-  messagingSenderId: "104332814219",
-  appId: "1:104332814219:web:83f83cab6c42003415f18e",
-  measurementId: "G-EZ9NKW1PED"
+  apiKey: "AIzaSyDQ3GJepD8FmWPoU3e3DU3EJUEKwXAiNws",
+  authDomain: "movie-portal-e807a.firebaseapp.com",
+  projectId: "movie-portal-e807a",
+  storageBucket: "movie-portal-e807a.firebasestorage.app",
+  messagingSenderId: "1096162435553",
+  appId: "1:1096162435553:web:7472f8c2cbfd33cb6872a0",
+  measurementId: "G-JJF4Z68PTQ"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-export default auth
+export default auth;

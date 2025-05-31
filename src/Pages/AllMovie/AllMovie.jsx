@@ -11,7 +11,7 @@ const AllMovie = () => {
     const handleAddToCart = (obj) =>{
        console.log(obj);
 
-       fetch('http://localhost:5000/my-favourite',{
+       fetch('https://movie-portal-server-92li.onrender.com/my-favourite',{
         method : 'POST',
         headers : {
           'content-type' : 'application/json'
